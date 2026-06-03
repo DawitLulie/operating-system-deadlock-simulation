@@ -1,81 +1,88 @@
-
-# ⚙️ Operating System Deadlock & Synchronization Simulation ⚙️
+# Operating System Deadlock and Synchronization Simulation
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
-![OS Project](https://img.shields.io/badge/OS-Deadlock%20%26%20Sync-orange)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Project](https://img.shields.io/badge/Operating%20System-Concepts-orange)
+![Status](https://img.shields.io/badge/Status-Completed-green)
 
 ---
 
-## 🚀 Project Overview
-This project demonstrates important **Operating System concepts**:
+## Project Overview
 
-- 🏦 Banker’s Algorithm (Deadlock Avoidance)
-- 🔁 Strict Alternation (Process Synchronization)
+This project demonstrates core Operating System concepts:
 
-It simulates how an operating system manages **resources safely** and ensures **mutual exclusion** between processes.
+- Banker’s Algorithm for Deadlock Avoidance
+- Strict Alternation for Process Synchronization
 
----
-
-## 📁 Project Files
-
-📌 Banker's Algorithm:
-- `Banker's_algo.py`
-
-📌 Strict Alternation:
-- `Strict_alte.py`
+It simulates how an operating system manages resources safely and handles process coordination in a controlled environment.
 
 ---
 
-## 🏦 Banker’s Algorithm (Deadlock Avoidance)
+## Project Structure
 
-✨ Features:
-- Calculates Need Matrix
-- Checks safe state of the system
-- Finds safe sequence of execution
+```
+OS_code Group_6/
+│
+├── OS_code/
+│   ├── Banker's_algo.py
+│   └── Strict_alte.py
+│
+└── README.md
+```
+
+---
+
+## Banker’s Algorithm
+
+This module demonstrates deadlock avoidance.
+
+### Features:
+- Computes Need Matrix
+- Checks system safety state
+- Generates safe sequence
 - Handles resource requests
-- Rolls back if unsafe state is detected
+- Rolls back unsafe allocations
 
-⚙️ How it works:
-- A process requests resources
-- System checks if request is safe
-- If safe → resources allocated ✅
-- If unsafe → request denied ❌
+### Working Principle:
+A process requests resources.  
+The system checks if granting the request keeps the system in a safe state.  
+If safe, allocation is done. Otherwise, the request is denied.
 
 ---
 
-## 🔁 Strict Alternation (Synchronization)
+## Strict Alternation
 
-✨ Features:
-- Demonstrates process synchronization
+This module demonstrates process synchronization.
+
+### Features:
 - Ensures mutual exclusion
 - Uses shared variable `turn`
-- Simulates two processes (P0 & P1)
+- Simulates two processes (P0 and P1)
 
-⚙️ How it works:
-- `turn = 0` → P0 enters critical section
-- `turn = 1` → P1 enters critical section
-- After execution, control switches to the other process
+### Working Principle:
+If `turn = 0`, P0 enters the critical section.  
+If `turn = 1`, P1 enters the critical section.  
+After execution, the turn switches to the other process.
 
 ---
 
-## ▶️ How to Run
+## How to Run
 
-### 🏦 Banker’s Algorithm
+Banker’s Algorithm:
 ```bash
 python Banker's_algo.py
 ```
 
-### 🔁 Strict Alternation
+Strict Alternation:
 ```bash
 python Strict_alte.py
 ```
 
 ---
 
-## 🧠 Concepts Covered
+## Concepts Covered
+
 - Deadlock Avoidance
-- Safe State Algorithm
+- Safe State Checking
 - Resource Allocation
 - Process Synchronization
 - Critical Section Problem
@@ -83,29 +90,21 @@ python Strict_alte.py
 
 ---
 
-## 💻 Technologies Used
-- Python 3
-- Threading Module
-- Operating System Concepts
+## Output Example
 
----
-
-## 📌 Output Example
-
-### Banker’s Algorithm
+Banker’s Algorithm:
 ```
 Request GRANTED
-Safe sequence: ['P1', 'P3', 'P0', 'P2']
+Safe sequence: [P1, P3, P0, P2]
 ```
 
-or
+OR
+
 ```
-Request DENIED (would lead to unsafe state)
+Request DENIED (unsafe state detected)
 ```
 
----
-
-### Strict Alternation
+Strict Alternation:
 ```
 P0 is in critical section
 P1 is in critical section
@@ -116,16 +115,26 @@ finishing....
 
 ---
 
-## 👨‍💻 Author
+## Technologies Used
+
+- Python 3
+- Threading Library
+- Operating System Concepts
+
+---
+
+## Author
+
 Operating System Group Project  
-Deadlock & Synchronization Simulation
+Deadlock and Synchronization Simulation
 
 ---
 
-## 📌 Note
-This project is for educational purposes to demonstrate:
-- How deadlocks are avoided
-- How processes synchronize
-- How operating systems manage shared resources
+## Note
 
----
+This project is for educational purposes and demonstrates how operating systems handle:
+
+- Deadlock avoidance
+- Resource allocation safety
+- Process synchronization
+```
